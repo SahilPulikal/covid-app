@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Covid-19 Status</string>
+
+    <!--Credits only-->
+    <string name="credits">\u2022 <b>covid19india.org</b> for India specific API.
+        \n\u2022 <b>corona.lmao.ninja</b> for Global API.
+        \n\u2022 <b>Flaticon</b> for social media icons.
+    </string>
+    <string name="libs">\u2022 <b>Glide</b> to display flag images
+        \n\u2022 <b>Eaze Graph</b> to display Pie charts
+    </string>
+    <string name="owner_text">Made by Sahil Sahil Haresh</string>
+
+
+    <!--App version-->
+    <string name="version">1.0</string>
+
+
+    <!--App changelog-->
+    <string name="changelogTitle">Covid-19 App v1.0</string>
+    <string name="changelog">\u2022 First version of our app\</string>
+</resources>
