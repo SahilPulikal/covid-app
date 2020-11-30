@@ -54,7 +54,7 @@ public class InfoActivity extends AppCompatActivity {
     }
 
     public void openGit(View view) {
-        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.github.com")));
+        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.github.com/SahilPulikal/covid-app")));
     }
 
     public void openInsta(View view) {
