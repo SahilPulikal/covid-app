@@ -2,8 +2,8 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/statewise_recyclerview"
-        android:icon="@drawable/ic_exclamation"
+        android:id="@+id/assessment_button"
+        android:icon="@drawable/ic_assessment"
         android:title="Exclamation"
         app:showAsAction="always" />
     <item

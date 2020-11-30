@@ -29,6 +29,10 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import org.eazegraph.lib.charts.PieChart;
 import org.eazegraph.lib.models.PieModel;
@@ -45,6 +49,8 @@ import java.util.Objects;
 
 
 public class MainActivity extends AppCompatActivity {
+
+//    private Button btnSignOut;
     String confirmed;
     String active;
     String date;
@@ -79,6 +85,9 @@ public class MainActivity extends AppCompatActivity {
         boolean isFirstStart = sharedPreferences.getBoolean("initialStart", true);
         String appVersion = sharedPreferences.getString("appVersion", version);
 
+        FirebaseAuth mAuth = FirebaseAuth.getInstance();
+//        View btnSignOut = findViewById(R.id.sign_out_button);
+
         textView_confirmed = findViewById(R.id.confirmed_textView);
         textView_confirmed_new = findViewById(R.id.confirmed_new_textView);
         textView_active = findViewById(R.id.active_textView);
@@ -112,6 +121,15 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "Data refreshed!", Toast.LENGTH_SHORT).show();
             }
         });
+//        btnSignOut.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                FirebaseAuth mGoogleSignInClient;
+//                mGoogleSignInClient.signOut();
+//                Toast.makeText(MainActivity.this,"You are Logged Out",Toast.LENGTH_SHORT).show();
+//                btnSignOut.setVisibility(View.INVISIBLE);
+//            }
+//        });
 
     }
 
@@ -148,8 +166,21 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(this, InfoActivity.class);
             startActivity(intent);
         }
+        if (item.getItemId() == R.id.assessment_button) {
+            Intent intent = new Intent(this, assessment.class);
+            startActivity(intent);
+        }
         return super.onOptionsItemSelected(item);
     }
+//    @Override
+//    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+//        if (item.getItemId() == R.id.sign_out_button) {
+//            Intent intent = new Intent(this, InfoActivity.class);
+//            startActivity(intent);
+//        }
+//        return super.onOptionsItemSelected(item);
+//    }
+
 
     @Override
     public void onBackPressed() {
@@ -504,5 +535,21 @@ public class MainActivity extends AppCompatActivity {
         });
         requestQueue.add(jsonObjectRequest);
     }
+//    WorkingOn
+//    private void updateUI(FirebaseUser fUser){
+//        btnSignOut.setVisibility(View.VISIBLE);
+//        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(getApplicationContext());
+//        if(account !=  null){
+//            String personName = account.getDisplayName();
+//            String personGivenName = account.getGivenName();
+//            String personFamilyName = account.getFamilyName();
+//            String personEmail = account.getEmail();
+//            String personId = account.getId();
+//            Uri personPhoto = account.getPhotoUrl();
+//
+//            Toast.makeText(MainActivity.this,personName + personEmail ,Toast.LENGTH_SHORT).show();
+//        }
+//
+//    }
 
 }
